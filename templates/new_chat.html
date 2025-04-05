@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduAssist Bot – Chat</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+  <div class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow-xl">
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Ask Your Questions</h2>
+    
+    <div class="mb-6 space-y-4">
+      {% for message in chat_history %}
+        <div class="p-4 rounded-xl {% if message.type == 'human' %}bg-blue-50{% else %}bg-gray-100{% endif %}">
+          {% if message.type == 'human' %}
+            <p class="font-bold text-blue-700">{{ message.content }}</p>
+          {% else %}
+            <p class="text-gray-800">{{ message.content }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    
+
+    <form method="POST" class="flex space-x-2">
+      <input name="user_question" type="text" placeholder="Ask something..." class="w-full p-3 border rounded">
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Send</button>
+    </form>
+
+    <div class="mt-8 flex justify-between flex-wrap gap-2">
+      <a href="/summary" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">📄 Summarize</a>
+      <a href="/generate_mcqs" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">📝 Generate MCQs</a>
+      <a href="/" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">🔄 Upload New Document</a>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # 🧠 EduAssist ChatBot: AI-Powered Study Assistant
 
-A smart educational chatbot that helps students understand study materials, summarize them, and test their knowledge with MCQs - powered by cutting-edge technologies like **RAG (Retrieval-Augmented Generation)**, **LLMs**, and **LangChain**.\
+A smart educational chatbot that helps students understand study materials, summarize them, and test their knowledge with MCQs - powered by cutting-edge technologies like **RAG (Retrieval-Augmented Generation)**, **LLMs**, and **LangChain**.
 
 
 ---
